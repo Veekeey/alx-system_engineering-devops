@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying "Best school" 10 times with while
+i=0
+
+while [ $i -lt "10" ]
+do
+	echo "Best school"
+	(("i += 1"))
+done
