@@ -4,8 +4,8 @@ exec { 'install flask':
   command => '/usr/bin/apt-get install -y flask'
 }
 
-exec { 'install puppet-lint':
-  command => '/usr/bin/gem install puppet-lint -v 2.1.0'
+exec { 'install pip3':
+  command => '/usr/bin/gem install pip3 -v 2.1.0'
 }
 
 package { 'flask':
@@ -13,8 +13,8 @@ package { 'flask':
   before => Exec['install flask']
 }
 
-package { 'puppet-lint':
+package { 'pip3':
   ensure  => 'installed',
-  before  => Exec['install puppet-lint'],
+  before  => Exec['install pip3'],
   require => Package['flask']
 }
